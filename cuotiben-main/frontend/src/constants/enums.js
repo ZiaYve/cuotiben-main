@@ -5,12 +5,19 @@
 
 /** 掌握状态（功能 7：掌握状态管理） */
 export const MASTERY_STATUS = {
-  NOT_REVIEWED: { code: 'NOT_REVIEWED', label: '未复习', tone: 'gray' },
-  REVIEWING: { code: 'REVIEWING', label: '复习中', tone: 'amber' },
-  MASTERED: { code: 'MASTERED', label: '已掌握', tone: 'green' }
+  TO_REVIEW: { code: 'TO_REVIEW', label: '待复习', tone: 'gray' },
+  REVIEWED: { code: 'REVIEWED', label: '已复习', tone: 'amber' },
+  MASTERED: { code: 'MASTERED', label: '已掌握', tone: 'green' },
+  // 兼容首页现有 mock 示例的旧状态码
+  NOT_REVIEWED: { code: 'TO_REVIEW', label: '待复习', tone: 'gray' },
+  REVIEWING: { code: 'TO_REVIEW', label: '待复习', tone: 'gray' }
 }
 
-export const MASTERY_STATUS_LIST = Object.values(MASTERY_STATUS)
+export const MASTERY_STATUS_LIST = [
+  MASTERY_STATUS.TO_REVIEW,
+  MASTERY_STATUS.REVIEWED,
+  MASTERY_STATUS.MASTERED
+]
 
 /** 错误原因（功能 5：错误原因记录） */
 export const ERROR_REASONS = [
